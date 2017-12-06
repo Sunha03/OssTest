@@ -1,0 +1,41 @@
+최초 설정
+git config --global user.name "이름"
+git config --global user.email "이메@일"
+저장소 마다 다르게 하고 싶으면 --global빼면 됨
+
+저장소: 버전관리를 할 파일들과 그 변경 이력들을 모두 저장해 두는 곳 보통 가장 상위 디렉토리에 생성
+git init:새로운 git 저장소를 만든다. //ls -al로 .git있는지 확인
+.git디렉토리:변경 이력정보가 저장, 지우면 관리에서 벗어남
+
+git status:현재 작업하고 있는 프로젝트 디렉토리의 상태를 확인
+git add:새로운 파일을 추적대상으로 등록
+git commit:commit대기 상태의 변경 사항을 저장소에 반영 새로운 버전을 만드는 것이라고 볼수 있음
+stage:commit대기 상태의 변경사항들이 있는 곳
+
+git log: repository에 저장된 commit history를 출력
+git log -<n>: 최근 n개의 commit history만 출력
+git log -p: commit history와 함께 commit간의 차이점을 출력
+
+git diff:현재 unstaged 상태(add하기 전)의 변경 상항 출력
+git diff --staged:현재 staged상태(commit대기 상태)의 변경 사항 출력
+git diff HEAD:마지막 commit과 현재 working directory의 차이점 출력
+git diff <commit id1>..<commit id2>:두 개의 commit간의 차이점 출력
+--word-diff, --color-words추가하면 보기 편할 수도 있다.
+
+git commit --amend:가장 최근 commit을 수정할 수 있다.
+
+git reset HEAD file1.txt:add한걸 취소
+git checkout -- file1.txt:(add하지 않은 상태) 수정한걸 지운다.
+
+.gitignore
+#주석
+*.a //확장자가 .a인 파일 무시
+!lib.a //위에서 무시했지만 이건 제외하겠다.
+/*.tmp // "/"로 시작하면 하위 디렉토리에 적용되지 않음, 확장자가 .tmp인 파일 중 현재 디렉토리 파일만 무시
+build/ //build/ 디렉토리에 있는 모든 파일 무시
+[Bb]in/ // Bin/ 또는 bin/ 디렉토리에 있는 모든 파일 무시
+test[0-5].txt //test0~5.txt를 무시
+doc/*.txt // doc/notes.txt파일은 무시하고 doc/server/arch.txt파일은 무시안함
+doc/**/*.pdf doc 아래의 모든 .pdf파일 무시
+
+git rm --cached <file>: 이미 commit된 파일을 git의 관리대상에서 제외함
