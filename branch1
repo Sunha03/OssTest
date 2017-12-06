@@ -1,0 +1,27 @@
+branch
+
+git branch <branchname>:새로운 branch를 생성
+git branch:모든 branch 목록 출력
+git branch -d <branchname>:branch삭제
+
+git checkout <branchname>:다른 branch로 전환
+git checkout -b <branchname>:새로운 branch를 생성하고 바로 전환
+
+git log --branches --decorate --graph --oneline
+--branches:모든 branch의 commit 보여줌
+--decorate:각 branch의 history상 현재 위치 표시
+--graph:branch merge history를 보여주는 graph로 표시
+--oneline:cmmit을 한 줄로 보여줌
+
+branch는 branch에 담긴 commit들 중 가장 마지막 commit을 가르키는 포인터이다.
+HEAD는 현재 branch를 가리키는 포인터이다.
+
+git log branch1..branch2: branch1에는 없고 branch2에 있는 commit을 보여줌
+git diff branch1..branch2: branch1과 branch2의 차이점을 보여줌
+
+merge:별도 branch에서 작업하던 실험적인 기능의 구현과 테스트가 완료되고 main branch로 작업 내용이 합치는 작업
+fast-forward merge
+3-way merge
+auto-merge
+
+3-way merge에서 취소할려면 git merge --abort
