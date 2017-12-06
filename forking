@@ -1,0 +1,12 @@
+forking workflow
+o 하나의 공식 저장소(read누구나,write해당 프로젝트를 이끌어가는 소수의 개발자)
+o 각 개발자마다 가각의 개발 저장소(read누구나, write해당 개발자)
+o pull request
+1.공식 저장소의 write권한을 모두에겍 주지 않고도 불특정 다수의 개발자로 부터 commite을 받음
+2.pull request를 통해 해당 작업 내용에 대한 토론도 가능
+3.팀원이 정해져 있지 않은, 대규모의 유기적인 팀에 적절한 유연한 개발 방식
+4.github에서 호스팅되는 대부분의 프로젝트들이 사용하는 방식
+*반드시 새로운 branch를 만들어서 작업해야 한다.
+
+conversation탭: 일반적인 comment 혹은 질문
+file changed탭: 라인 별 comment 혹은 코드 리뷰
