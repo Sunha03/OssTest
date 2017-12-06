@@ -1,0 +1,20 @@
+cmake_minimum_required(VERSION version_number)
+프로젝트의 CMakeLists,txt를 실행하기 위해 필요한 CMake의 최소 버전명시, top-level CMakeLists.txt에서만 호출
+
+project(project_name)
+프로젝트 이름 설정(project_name이 변수로 설정됨 ${PROJECT_NAME}) 적어도 top-level CMakeLists.txt에서 호출
+
+add_subdirectory(source_dir)
+서브디렉토리도 빌드 대상으로 추가
+source_dir: CMakeLists.txt가 존재하는 디렉토리 경로, 실행파일은 build/testapp에 생성됨
+
+target_include_directories(target_name PUBLIC path1 path2 ...)
+target_name을 컴파일 할 때 참조할 include directory지정하는 명령
+
+find_package(<name>)
+<name>라는 package(보통 라이브러리)가 시스템에 설치 되어 있는지 찾아보고 관련 변수를 정의한다.
+
+ex) find_package(Armadillo) ${ARMDILLO_INCLUDE_DIRS} ${ARMADILLO_LIBRARIES}
+
+cmake --help-module-list
+cmake --help-module FindArmadillo
