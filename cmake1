@@ -1,0 +1,34 @@
+cmake <path-to-CMakeLists.txt>
+중간파일:CMakeFiles / cmake_install.cmake / CMakeCache.txt
+최종결과파일: Makefile
+
+in-source build:CMakeLists.txt 있는 폴더에 생김
+out-of-source build:다른 디렉토리에 생김(추천방식)
+
+CMakeLists.txt(수정x)& source file(수정o)->make명령
+CMakeLists.txt(수정o)& source file(수정o,x)->make명령(make가 내부적으로 cmake함)
+결론:수정하면 make만 하면됨
+
+command(args..)
+command:명령어 이름 대소문자 구분x
+args:인자들 space,newline으로 구분(인자사이에 space가 존재하면 ""로 묶어줌)
+
+add_executable(target_name source1 source2 ...)
+source1,source2를 빌드하여 target_name에 파일을 만들겠다.
+
+add_library(target_name source1 source2 ...) //.a 라이브러리
+add_library(target_name SHARED source1 source2 ...) //.so 라이브러리
+
+target_link_libraries(target_name library1 library2 ...)
+
+message(args)
+cmake할 때 출력됨
+
+set(variable value) //변수 정의/대입
+set(variable value1 value2 ...) //list변수 정의
+list(APPEND variable value4 value5 ...)//list에 추가
+set(variable ${variable} value4 value5 ...) //list에 추가
+${variable}//변수 참조 
+
+Line commnet # //주석
+Bracket comment #[[]] //여러줄 주석
