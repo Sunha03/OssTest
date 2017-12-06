@@ -1,0 +1,29 @@
+추가적인 git
+
+rebase와 merge 모두 두 개의 branch를 합칠 때 쓸 수 있다.
+동작하는 방식이 완전히 다르다.
+rebase가 좀 더 깨긋한 history를 만든다.
+rebase와 merge중 어떤 것을 사용하는 것이 나은지는 상황에 따라 다르다.
+rebase 역시 merge와 마찬가지로 충돌이 발생할 수 있다.
+이 경우 각 commit의 rebase 진행 중 멈출 때 마다 해당 commit에 발생한 충돌을 해결한 후
+git rebase --continue로 계속 진행해야한다.
+
+rebase주의사항
+이미 push한 commit은 수정/삭제하지말자(pull request용 branch는 제외)
+
+squashing주의사항
+이미 push한 commit은 수정/삭제하지말자(pull request용 branch는 제외)
+
+git rebase -i <commit범위>
+
+revert
+특정 commit을 취소하는 새로운 commit을 만들어 적용함
+이미 push를 한 commit을 취소할 때
+혹은 history중간의 특정 commit만 취소할 때
+git revert<commit id>
+git revert<commit id1>..<commit id2>
+
+reset
+실제로 과거의 특정 commit이 저장소의 최신 commit이 되도록 HEAD를 변경
+아직 push하지 않은 commit을 취소할 때
+git reset --soft, --mixed, --hard <commit id>
